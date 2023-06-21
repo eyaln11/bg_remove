@@ -2,6 +2,7 @@ import "./Bg.css";
 import close from "./../../images/close.png";
 import banner from "./../../images/banner.png";
 import logo from "./../../images/logo.png";
+import DownloadImg from "../DownloadImg/DownloadImg";
 
 function Bg() {
   return (
@@ -30,9 +31,12 @@ function Bg() {
               ופרטיות ותנאי השימוש
             </span>
           </div>
+          <div className="bg_body_eula_btn">תקנון חברה</div>
         </div>
         <div className="bg_body_right">
-          <div className="bg_body_right_middle"></div>
+          <div className="bg_body_right_middle">
+            <DownloadImg />
+          </div>
         </div>
       </div>
 
