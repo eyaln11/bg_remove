@@ -1,10 +1,16 @@
+import { useState } from "react";
+
 import "./Bg.css";
 import close from "./../../images/close.png";
 import banner from "./../../images/banner.png";
 import logo from "./../../images/logo.png";
 import DownloadImg from "../DownloadImg/DownloadImg";
+import Bgnobg from "../Bgnobg/Bgnobg";
+import Bgoriginal from "../Bgoriginal/Bgoriginal";
 
 function Bg() {
+  const [bgType, setBgType] = useState(true);
+
   return (
     <div className="bg_general_div">
       <div className="bg_top_menu">
@@ -18,13 +24,25 @@ function Bg() {
         <div className="bg_body_left">
           <div className="bg_body_tabs">
             <div className="bg_body_bg_remove">
-              <span className="bg_body_bg_remove_text">הוסר רקע</span>
+              <span
+                className="bg_body_bg_remove_text"
+                onClick={() => setBgType(true)}
+              >
+                הוסר רקע
+              </span>
             </div>
             <div className="bg_body_bg_original">
-              <span className="bg_body_bg_remove_text">מקורי</span>
+              <span
+                className="bg_body_bg_remove_text"
+                onClick={() => setBgType(false)}
+              >
+                מקורי
+              </span>
             </div>
           </div>
-          <div className="bg_body_left_middle"></div>
+          <div className="bg_body_left_middle">
+            {bgType ? <Bgnobg /> : <Bgoriginal />}
+          </div>
           <div className="bg_body_eula">
             <span>
               על ידי העלאת תמונה אתה מסכים לתנאים וההגבלות שלנו. וחלים מדיניות

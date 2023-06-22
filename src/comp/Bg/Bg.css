@@ -104,6 +104,7 @@
   color: white;
   font-family: "Aduma";
   margin: 13px;
+  cursor: pointer;
 }
 
 .bg_body_bg_remove {
