@@ -45,3 +45,17 @@
   border-bottom-left-radius: 18px;
 }
 
+.display_uploaded_image_nobg_container {
+  width: 272px;
+  height: 238px;
+  position: relative;
+  margin: 0 auto;
+  border: 1px solid white;
+  top: 50px;
+}
+
+.image_nobg_style {
+  width: 100%;
+  position: absolute;
+  height: 100%;
+}

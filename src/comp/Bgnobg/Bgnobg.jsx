@@ -1,7 +1,7 @@
 import "./Bgnobg.css";
 import { useState, useRef } from "react";
 
-function Bgnobg() {
+function Bgnobg({ image }) {
   const [choosed_color, setchoosed_color] = useState(null);
 
   const inputElement = useRef();
@@ -26,6 +26,15 @@ function Bgnobg() {
           className="show_selected_color"
           style={{ backgroundColor: choosed_color }}
         ></div>
+      </div>
+      <div className="display_uploaded_image_nobg_container">
+        {image && (
+          <img
+            src={image ? URL.createObjectURL(image) : ""}
+            className="image_nobg_style"
+            alt=""
+          />
+        )}
       </div>
 
       <input

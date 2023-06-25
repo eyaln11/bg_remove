@@ -1,0 +1,14 @@
+.display_uploaded_image_original_container {
+  width: 272px;
+  height: 238px;
+  position: relative;
+  margin: 0 auto;
+  border: 1px solid white;
+  top: 50px;
+}
+
+.image_original_style {
+  width: 100%;
+  position: absolute;
+  height: 100%;
+}
