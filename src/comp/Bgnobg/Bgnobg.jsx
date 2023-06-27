@@ -1,10 +1,39 @@
+import { useEffect } from "react";
 import "./Bgnobg.css";
 import { useState, useRef } from "react";
+import axios from "axios";
 
 function Bgnobg({ image }) {
   const [choosed_color, setchoosed_color] = useState(null);
 
   const inputElement = useRef();
+
+  useEffect(() => {
+    if (image) {
+      onFileUpload(image);
+    }
+  }, [image]);
+
+  function onFileUpload(imgFile) {
+    const formData = new FormData();
+    formData.append("file", imgFile);
+    formData.append("fileName", imgFile.name);
+
+    const headers = {
+      "content-type": "multipart/form-data",
+    };
+
+    try {
+      const res = axios.post(
+        "http://localhost:5000/send_image",
+        formData,
+        headers
+      );
+      console.log(res);
+    } catch (ex) {
+      console.log(ex);
+    }
+  }
 
   function choose_color_input() {
     inputElement.current.click();
