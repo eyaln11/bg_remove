@@ -14,7 +14,7 @@ function Bgnobg({ image }) {
     }
   }, [image]);
 
-  function onFileUpload(imgFile) {
+  async function onFileUpload(imgFile) {
     const formData = new FormData();
     formData.append("file", imgFile);
     formData.append("fileName", imgFile.name);
@@ -24,12 +24,12 @@ function Bgnobg({ image }) {
     };
 
     try {
-      const res = axios.post(
+      const res = await axios.post(
         "http://localhost:5000/send_image",
         formData,
         headers
       );
-      console.log(res);
+      console.log({ res });
     } catch (ex) {
       console.log(ex);
     }
